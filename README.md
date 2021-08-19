@@ -2,49 +2,49 @@
 
 ### Działanie programu z przykładowymi danymi:
 
->**Podaj ilosc pizz do porownania:**
+>**Podaj ilość pizz do porównania:**
 >```
 >2
 >```
 
 >**----------[ Pizza 1 ]----------**
 >
->**Podaj srednice pizzy [cm]:**
+>**Podaj średnicę pizzy [cm]:**
 >```
 >40
 >```
->**Podaj cene pizzy [zł]:**
+>**Podaj cenę pizzy [zł]:**
 >```
 >20
 >```
 >
->**Srednica:       40 cm**
+>**Średnica:       40 cm**
 >
->**Cena za szt:    20 zl**
+>**Cena za sztukę:    20 zł**
 >
->**Pole calkowite: 1256.64 cm<sup>2</sup>**
+>**Pole całkowite: 1256.64 cm<sup>2</sup>**
 >
 >**Cena za cm<sup>2</sup>:   1.59155 gr**
 
 >**----------[ Pizza 2 ]----------**
 >
->**Podaj srednice pizzy [cm]:**
+>**Podaj średnicę pizzy [cm]:**
 >```
 >50
 >```
->**Podaj cene pizzy [zł]:**
+>**Podaj cenę pizzy [zł]:**
 >```
 >30
 >```
 >
->**Srednica:       50 cm**
+>**Średnica:       50 cm**
 >
->**Cena za szt:    30 zl**
+>**Cena za sztukę:    30 zł**
 >
->**Pole calkowite: 1963.5 cm<sup>2</sup>**
+>**Pole całkowite: 1963.5 cm<sup>2</sup>**
 >
 >**Cena za cm<sup>2</sup>:   1.52789 gr**
 
->**------[ Najlepszy wybor ]------**
+>**------[ Najlepszy wybór ]------**
 >
 >**Pizza 2 (1.52789 gr za cm<sup>2</sup>)**
