@@ -88,7 +88,7 @@ int wczytajIlosc()
 void wyswietlDane(Pizza pizza)
 {
 	cout << "\n\227rednica:\t" << pizza.srednica << " cm\n";
-	cout << "Cena za sztuk\251:\t" << pizza.cenaSzt << " zl\n";
+	cout << "Cena za sztuk\251:\t" << pizza.cenaSzt << " z\210\n";
 	cout << "Pole ca\210kowite:\t" << pizza.pole << " cm^2\n";
 	cout << "Cena za cm^2:\t" << pizza.cenaCm2 << " gr\n\n";
 }
