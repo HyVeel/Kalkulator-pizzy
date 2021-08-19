@@ -35,10 +35,10 @@ public:
 private:
 	double wczytajSrednice()
 	{
-		cout << "Podaj srednice pizzy [cm]: "; cin >> srednica;
+		cout << "Podaj \230rednic\251 pizzy [cm]: "; cin >> srednica;
 		if(srednica <= 0)
 		{
-			cout << "\a[!] Srednica musi byc dodatnia"; cout << "\n";
+			cout << "\a[!] \227rednica musi by\206 dodatnia"; cout << "\n";
 			wczytajSrednice();
 		}
 
@@ -47,10 +47,10 @@ private:
 
 	double wczytajCeneSzt()
 	{
-		cout << "Podaj cene pizzy [z\210]: "; cin >> cenaSzt;
+		cout << "Podaj cen\251 pizzy [z\210]: "; cin >> cenaSzt;
 		if(cenaSzt < 0)
 		{
-			cout << "\a[!] Cena nie moze byc ujemna"; cout << "\n";
+			cout << "\a[!] Cena nie mo\276e by\206 ujemna"; cout << "\n";
 			wczytajCeneSzt();
 		}
 
@@ -75,10 +75,10 @@ private:
 
 int wczytajIlosc()
 {
-	cout << "Podaj ilosc pizz do porownania: "; cin >> iloscPizz;
+	cout << "Podaj ilo\230\206 pizz do por\242wnania: "; cin >> iloscPizz;
 	if(iloscPizz <= 0)
 	{
-		cout << "\a[!] Liczba pizz musi byc dodatnia"; cout << "\n";
+		cout << "\a[!] Liczba pizz musi by\206 dodatnia"; cout << "\n";
 		wczytajIlosc();
 	}
 
@@ -87,9 +87,9 @@ int wczytajIlosc()
 
 void wyswietlDane(Pizza pizza)
 {
-	cout << "\nSrednica:\t" << pizza.srednica << " cm\n";
-	cout << "Cena za szt:\t" << pizza.cenaSzt << " zl\n";
-	cout << "Pole calkowite:\t" << pizza.pole << " cm^2\n";
+	cout << "\n\227rednica:\t" << pizza.srednica << " cm\n";
+	cout << "Cena za sztuk\251:\t" << pizza.cenaSzt << " zl\n";
+	cout << "Pole ca\210kowite:\t" << pizza.pole << " cm^2\n";
 	cout << "Cena za cm^2:\t" << pizza.cenaCm2 << " gr\n\n";
 }
 
@@ -129,7 +129,7 @@ int main()
 
 	int indeks = znajdzMin(ceny);
 
-	cout << "------[ Najlepszy wybor ]------\n\n";
+	cout << "------[ Najlepszy wyb\242r ]------\n\n";
 
 	cout << "Pizza " << indeks + 1 << " (" << pizza[indeks].cenaCm2 << " gr za cm^2)";
 	getchar(); getchar();
