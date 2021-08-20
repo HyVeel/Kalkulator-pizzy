@@ -1,4 +1,4 @@
-# Prosty kalkulator opłacalności pizzy
+# Prosty kalkulator i porównywarka opłacalności pizzy
 
 ### Działanie programu z przykładowymi danymi:
 
