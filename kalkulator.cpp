@@ -197,7 +197,7 @@ int main()
 	cout << "Pizza " << indeks + 1 << " (" << pizza[indeks].cenaCm2 << " gr za cm^2)";
 	getchar(); getchar();
 
-	delete[] pizza;
+	delete [] pizza;
 
 	return 0;
 }
