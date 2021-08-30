@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h> //_getch()
 
 using namespace std;
 
@@ -8,14 +9,19 @@ int iloscPizz;
 class Pizza
 {
 public:
+	char ksztalt;
 	double srednica;
+	double bokA, bokB;
 	double cenaSzt;
 	double pole;
 	double cenaCm2;
 
 	Pizza()
 	{
+		ksztalt = '0';
 		srednica = 0;
+		bokA = 0;
+		bokB = 0;
 		cenaSzt = 0;
 		pole = 0;
 		cenaCm2 = 0;
@@ -24,15 +30,43 @@ public:
 	Pizza uzupelnijDane()
 	{
 		Pizza temp;
-		temp.srednica = wczytajSrednice();
+		temp.ksztalt = wczytajKsztalt();
+		if(temp.ksztalt == '1') //kolo
+		{
+			temp.srednica = wczytajSrednice();
+			temp.pole = obliczPole(temp.srednica);
+		}
+		else //prostokat
+		{
+			temp.bokA = wczytajBokA();
+			temp.bokB = wczytajBokB();
+			temp.pole = obliczPole(temp.bokA, temp.bokB);
+		}
+
 		temp.cenaSzt = wczytajCeneSzt();
-		temp.pole = obliczPole(temp.srednica);
 		temp.cenaCm2 = obliczCeneCm2(temp.cenaSzt, temp.pole) * 100; //*100 - bo w gr
 
 		return temp;
 	}
 
 private:
+	int wczytajKsztalt()
+	{
+		cout << "Wybierz kszta\210t pizzy\n";
+		cout << "[1] Okr\245g\210a\n";
+		cout << "[2] Prostok\245tna\n\n";
+
+		do
+		{
+			ksztalt = _getch();
+		}while(ksztalt != '1' && ksztalt != '2');
+
+		if(ksztalt == '1') cout << "> Okr\245g\210a\n\n";
+		else cout << "> Prostok\245tna\n\n";
+
+		return (int)ksztalt;
+	}
+
 	double wczytajSrednice()
 	{
 		cout << "Podaj \230rednic\251 pizzy [cm]: "; cin >> srednica;
@@ -43,6 +77,30 @@ private:
 		}
 
 		return srednica;
+	}
+
+	double wczytajBokA()
+	{
+		cout << "Podaj d\210ugo\230\206 1 boku pizzy [cm]: "; cin >> bokA;
+		if(bokA <= 0)
+		{
+			cout << "\a[!] D\210ugo\230\206 boku musi by\206 dodatnia"; cout << "\n";
+			wczytajSrednice();
+		}
+
+		return bokA;
+	}
+
+	double wczytajBokB()
+	{
+		cout << "Podaj d\210ugo\230\206 2 boku pizzy [cm]: "; cin >> bokB;
+		if(bokB <= 0)
+		{
+			cout << "\a[!] D\210ugo\230\206 boku musi by\206 dodatnia"; cout << "\n";
+			wczytajSrednice();
+		}
+
+		return bokB;
 	}
 
 	double wczytajCeneSzt()
@@ -61,6 +119,13 @@ private:
 	{
 		double r = d / 2;
 		pole = PI * r * r;
+
+		return pole;
+	}
+
+	double obliczPole(double a, double b)
+	{
+		pole = a * b;
 
 		return pole;
 	}
@@ -87,10 +152,8 @@ int wczytajIlosc()
 
 void wyswietlDane(Pizza pizza)
 {
-	cout << "\n\227rednica:\t" << pizza.srednica << " cm\n";
-	cout << "Cena za sztuk\251:\t" << pizza.cenaSzt << " z\210\n";
-	cout << "Pole ca\210kowite:\t" << pizza.pole << " cm^2\n";
-	cout << "Cena za cm^2:\t" << pizza.cenaCm2 << " gr\n\n";
+	cout << "\nPole ca\210kowite:\t" << pizza.pole << " cm^2\n";
+	cout << "Cena za cm^2:\t" << pizza.cenaCm2 << " gr\n\n\n";
 }
 
 int znajdzMin(double cena[])
