@@ -2,49 +2,50 @@
 
 ### Działanie programu z przykładowymi danymi:
 
->**Podaj ilość pizz do porównania:**
->```
->2
->```
+>Podaj ilość pizz do porównania: ```2```
 
->**----------[ Pizza 1 ]----------**
+>----------[ Pizza 1 ]----------
 >
->**Podaj średnicę pizzy [cm]:**
->```
->40
->```
->**Podaj cenę pizzy [zł]:**
->```
->20
->```
+>Wybierz kształt pizzy:
 >
->**Średnica:       40 cm**
+>[1] Okrągła
 >
->**Cena za sztukę:    20 zł**
+>[2] Prostokątna
 >
->**Pole całkowite: 1256.64 cm<sup>2</sup>**
+>**```>> 1 <<```**
 >
->**Cena za cm<sup>2</sup>:   1.59155 gr**
+>&gt; Okrągła
+>
+>Podaj średnicę pizzy [cm]: ```40```
+>
+>Podaj cenę pizzy [zł]: ```20```
+>
+>Pole całkowite: 1256.64 cm<sup>2</sup>
+>
+>Cena za cm<sup>2</sup>:   1.59155 gr
 
->**----------[ Pizza 2 ]----------**
+>----------[ Pizza 2 ]----------
 >
->**Podaj średnicę pizzy [cm]:**
->```
->50
->```
->**Podaj cenę pizzy [zł]:**
->```
->30
->```
+>Wybierz kształt pizzy:
 >
->**Średnica:       50 cm**
+>[1] Okrągła
 >
->**Cena za sztukę:    30 zł**
+>[2] Prostokątna
 >
->**Pole całkowite: 1963.5 cm<sup>2</sup>**
+>**```>> 2 <<```**
 >
->**Cena za cm<sup>2</sup>:   1.52789 gr**
+>&gt; Prostokątna
+>
+>Podaj długość 1 boku pizzy [cm]: ```30```
+>
+>Podaj długość 2 boku pizzy [cm]: ```50```
+>
+>Podaj cenę pizzy [zł]: ```24```
+>
+>Pole całkowite: 1500 cm<sup>2</sup>
+>
+>Cena za cm<sup>2</sup>:   1.6 gr
 
->**------[ Najlepszy wybór ]------**
+>------[ Najlepszy wybór ]------
 >
->**Pizza 2 (1.52789 gr za cm<sup>2</sup>)**
+>Pizza 1 (1.59155 gr za cm<sup>2</sup>)
