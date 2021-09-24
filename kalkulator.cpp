@@ -27,32 +27,35 @@ public:
 		cenaCm2 = 0;
 	}
 
-	Pizza uzupelnijDane()
+	void uzupelnijDane()
 	{
-		Pizza temp;
-		temp.ksztalt = wczytajKsztalt();
-		if(temp.ksztalt == '1') //kolo
+		ksztalt = wczytajKsztalt();
+		if(ksztalt == '1') //kolo
 		{
-			temp.srednica = wczytajSrednice();
-			temp.pole = obliczPole(temp.srednica);
+			srednica = wczytajSrednice();
+			pole = obliczPole(srednica);
 		}
 		else //prostokat
 		{
-			temp.bokA = wczytajBokA();
-			temp.bokB = wczytajBokB();
-			temp.pole = obliczPole(temp.bokA, temp.bokB);
+			bokA = wczytajBokA();
+			bokB = wczytajBokB();
+			pole = obliczPole(bokA, bokB);
 		}
 
-		temp.cenaSzt = wczytajCeneSzt();
-		temp.cenaCm2 = obliczCeneCm2(temp.cenaSzt, temp.pole) * 100; //*100 - bo w gr
+		cenaSzt = wczytajCeneSzt();
+		cenaCm2 = obliczCeneCm2(cenaSzt, pole) * 100; //*100 - bo w gr
+	}
 
-		return temp;
+	void wyswietlDane()
+	{
+		cout << "\nPole ca\210kowite:\t" << pole << " cm^2\n";
+		cout << "Cena za cm^2:\t" << cenaCm2 << " gr\n\n\n";
 	}
 
 private:
-	int wczytajKsztalt()
+	char wczytajKsztalt()
 	{
-		cout << "Wybierz kszta\210t pizzy\n";
+		cout << "Wybierz kszta\210t pizzy:\n";
 		cout << "[1] Okr\245g\210a\n";
 		cout << "[2] Prostok\245tna\n\n";
 
@@ -64,7 +67,7 @@ private:
 		if(ksztalt == '1') cout << "> Okr\245g\210a\n\n";
 		else cout << "> Prostok\245tna\n\n";
 
-		return (int)ksztalt;
+		return ksztalt;
 	}
 
 	double wczytajSrednice()
@@ -150,12 +153,6 @@ int wczytajIlosc()
 	return iloscPizz;
 }
 
-void wyswietlDane(Pizza pizza)
-{
-	cout << "\nPole ca\210kowite:\t" << pizza.pole << " cm^2\n";
-	cout << "Cena za cm^2:\t" << pizza.cenaCm2 << " gr\n\n\n";
-}
-
 int znajdzMin(double cena[])
 {
 	double najmniejsza = cena[0];
@@ -185,8 +182,8 @@ int main()
 	{
 		cout << "----------[ Pizza " << i + 1 << " ]----------\n\n";
 
-		pizza[i] = pizza[i].uzupelnijDane();
-		wyswietlDane(pizza[i]);
+		pizza[i].uzupelnijDane();
+		pizza[i].wyswietlDane();
 		ceny[i] = pizza[i].cenaCm2;
 	}
 
@@ -198,6 +195,7 @@ int main()
 	getchar(); getchar();
 
 	delete [] pizza;
+	delete [] ceny;
 
 	return 0;
 }
